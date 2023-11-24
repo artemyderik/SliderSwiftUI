@@ -37,7 +37,6 @@
 		9447B0652B036B1B00B78199 = {
 			isa = PBXGroup;
 			children = (
-				9447B0812B0A1ACE00B78199 /* GradientSlider.swift */,
 				9447B0702B036B1B00B78199 /* SliderSwiftUI */,
 				9447B06F2B036B1B00B78199 /* Products */,
 			);
@@ -54,6 +53,7 @@
 		9447B0702B036B1B00B78199 /* SliderSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				9447B0812B0A1ACE00B78199 /* GradientSlider.swift */,
 				9447B0712B036B1B00B78199 /* SliderSwiftUIApp.swift */,
 				9447B0732B036B1B00B78199 /* ContentView.swift */,
 				9447B0752B036B1C00B78199 /* Assets.xcassets */,

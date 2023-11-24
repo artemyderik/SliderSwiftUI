@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GradientSlider: View {
     @Binding var value: Double
+    
     let gradientColors: [Color]
     let chosenColor: ChosenColor
     
