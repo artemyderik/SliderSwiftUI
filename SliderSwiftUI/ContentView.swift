@@ -18,15 +18,12 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Rectangle()
-                .frame(height: UIScreen.main.bounds.height / 3.5)
-                .cornerRadius(50)
-                .foregroundColor(
-                    Color(
-                        red: redSliderValue / 255,
-                        green: greenSliderValue / 255,
-                        blue: blueSliderValue / 255)
-                )
+            ColorisedRectangle(
+                redSliderValue: redSliderValue,
+                greenSliderValue: greenSliderValue,
+                blueSliderValue: blueSliderValue
+            )
+            
             VStack {
                 GradientSlider(
                     value: $redSliderValue,
@@ -73,7 +70,7 @@ struct ContentView: View {
                     isBlueFieldFocused = false
                 }
                 .focused($isGreenFieldFocused)
-
+                
                 GradientSlider(
                     value: $blueSliderValue,
                     gradientColors: [
@@ -96,52 +93,55 @@ struct ContentView: View {
                     isBlueFieldFocused = true
                 }
                 .focused($isBlueFieldFocused)
-
+                
             }
             
-                .toolbar {
-                        ToolbarItemGroup(placement: .keyboard) {
-                            HStack {
-                                Button(action: {
-                                    if isBlueFieldFocused {
-                                        isBlueFieldFocused = false
-                                        isGreenFieldFocused = true
-                                    } else {
-                                        isGreenFieldFocused = false
-                                        isRedFieldFocused = true
-                                    }
-                                }) {
-                                    Image(systemName: "chevron.compact.up")
-                                }
-                                .padding()
-                                
-                                Button(action: {
-                                    if isRedFieldFocused {
-                                        isRedFieldFocused = false
-                                        isGreenFieldFocused = true
-                                    } else {
-                                        isGreenFieldFocused = false
-                                        isBlueFieldFocused = true
-                                    }
-                                })
-                                {
-                                    Image(systemName: "chevron.compact.down")
-                                }
-                                
-                                Spacer()
-                                    
-                            Button("Done") {
-                                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                                print("Clicked")
-                            }
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    HStack {
+                        Button(action: upButtonTapped) {
+                            Image(systemName: "chevron.compact.up")
+                        }
+                        .padding()
+                        
+                        Button(action: downButtonTapped) {
+                            Image(systemName: "chevron.compact.down")
+                        }
+                        
+                        Spacer()
+                        
+                        Button("Done") {
+                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                            print("Clicked")
                         }
                     }
                 }
+            }
             
             Spacer()
         }
         
         .padding()
+    }
+    
+    private func upButtonTapped() {
+        if isBlueFieldFocused {
+            isBlueFieldFocused = false
+            isGreenFieldFocused = true
+        } else {
+            isGreenFieldFocused = false
+            isRedFieldFocused = true
+        }
+    }
+
+    private func downButtonTapped() {
+        if isRedFieldFocused {
+            isRedFieldFocused = false
+            isGreenFieldFocused = true
+        } else {
+            isGreenFieldFocused = false
+            isBlueFieldFocused = true
+        }
     }
 }
 
@@ -150,3 +150,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

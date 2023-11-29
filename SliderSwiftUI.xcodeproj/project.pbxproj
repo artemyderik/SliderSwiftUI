@@ -12,6 +12,7 @@
 		9447B0762B036B1C00B78199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9447B0752B036B1C00B78199 /* Assets.xcassets */; };
 		9447B0792B036B1C00B78199 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9447B0782B036B1C00B78199 /* Preview Assets.xcassets */; };
 		9447B0822B0A1ACE00B78199 /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447B0812B0A1ACE00B78199 /* GradientSlider.swift */; };
+		9447B0B82B11CDF200B78199 /* ColorisedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447B0B72B11CDF200B78199 /* ColorisedRectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		9447B0752B036B1C00B78199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9447B0782B036B1C00B78199 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9447B0812B0A1ACE00B78199 /* GradientSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
+		9447B0B72B11CDF200B78199 /* ColorisedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorisedRectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				9447B0812B0A1ACE00B78199 /* GradientSlider.swift */,
 				9447B0712B036B1B00B78199 /* SliderSwiftUIApp.swift */,
 				9447B0732B036B1B00B78199 /* ContentView.swift */,
+				9447B0B72B11CDF200B78199 /* ColorisedRectangle.swift */,
 				9447B0752B036B1C00B78199 /* Assets.xcassets */,
 				9447B0772B036B1C00B78199 /* Preview Content */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9447B0B82B11CDF200B78199 /* ColorisedRectangle.swift in Sources */,
 				9447B0822B0A1ACE00B78199 /* GradientSlider.swift in Sources */,
 				9447B0742B036B1B00B78199 /* ContentView.swift in Sources */,
 				9447B0722B036B1B00B78199 /* SliderSwiftUIApp.swift in Sources */,

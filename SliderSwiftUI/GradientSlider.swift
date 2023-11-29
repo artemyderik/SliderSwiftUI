@@ -18,31 +18,33 @@ struct GradientSlider: View {
     }
     
     var body: some View {
-         
+        
         HStack {
             
             Text(textByColor())
                 .frame(width: 50)
             
             ZStack(alignment: .leading) {
-                            LinearGradient(
-                                gradient: Gradient(colors: gradientColors),
-                                startPoint: .leading,
-                                endPoint: .trailing)
-                                .frame(width: 190, height: 4)
-                                .cornerRadius(5)
-                            
-                            Slider(value: $value, in: 0...255, step: 1)
-                                .accentColor(Color.clear)
-                                .frame(width: 190)
-                        }
-
+                LinearGradient(
+                    gradient: Gradient(colors: gradientColors),
+                    startPoint: .leading,
+                    endPoint: .trailing)
+                .frame(width: 190, height: 4)
+                .cornerRadius(5)
+                
+                Slider(value: $value, in: 0...255, step: 1)
+                    .accentColor(Color.clear)
+                    .frame(width: 190)
+                
+            }
+            
             TextField("", value: $value, formatter: NumberFormatter())
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.numberPad)
                 .frame(width: 50)
                 .padding()
         }
+        .padding(-10)
     }
     
     private func textByColor() -> String {
